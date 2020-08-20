@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 90px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .navigation {
+    max-height: 27px;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 34px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin: 0 10px;
+      padding-bottom: 2px;
+      font-size: 22px;
+
+      &:hover {
+        border-bottom: black 2px solid;
+        cursor: pointer;
+      }
+    }
+  }
+}
