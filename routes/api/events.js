@@ -5,10 +5,19 @@ const { v4: uuidv4 } = require('uuid');
 const Event = require('../../models/Event');
 
 router.get('/', (req, res) => {
-  Event.find((err, events) => {
-    if (err) return res.send(500).send('failed');
-    res.json(events);
-  });
+  res.send([
+    {
+      _id: '123',
+      datum: 'woensdag, april 25, 2020',
+      titel: 'Nieuw evenenment titel',
+      inhoud_kort:
+        'Hier dan een wat kortere tekst over het evenement maar net genoeg om de lezer geinteresseert te maken om meer te lezen.',
+    },
+  ]);
+  // Event.find((err, events) => {
+  //   if (err) return res.send(500).send('failed');
+  //   res.json(events);
+  // });
 });
 
 router.get('/:id', (req, res) => {
