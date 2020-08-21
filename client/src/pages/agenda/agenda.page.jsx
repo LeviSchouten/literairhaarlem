@@ -22,7 +22,9 @@ const Agenda = () => {
 
   return (
     <div className="agenda">
-      {events ? generateEvents(events) : 'No events'}
+      {events
+        ? generateEvents(events)
+        : 'Er staan op dit moment geen evenementen op de agenda.'}
     </div>
   );
 };

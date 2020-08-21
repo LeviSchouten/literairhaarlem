@@ -9,6 +9,7 @@ import Over from './pages/over/over.page.jsx';
 import Agenda from './pages/agenda/agenda.page.jsx';
 
 import './App.scss';
+import Evenement from './pages/evenement/evenement.page.jsx';
 
 function App() {
   return (
@@ -19,10 +20,11 @@ function App() {
           <Switch className="linked-content">
             <Route exact path="/" component={Home} />
             <Route path="/over" component={Over} />
-            <Route path="/agenda" component={Agenda} />
+            <Route exact path="/agenda" component={Agenda} />
+            <Route path="/agenda/:id" component={Evenement} />
           </Switch>
-          <Footer />
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );

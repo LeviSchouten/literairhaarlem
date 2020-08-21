@@ -27,11 +27,12 @@
     margin-top: 30px;
     text-align: right;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .image {
-    background-image: url(https://picsum.photos/500/500);
     width: 320px;
     height: 240px;
+    background-size: cover;
   }
 }

@@ -1,7 +1,12 @@
 .app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
   .content {
+    flex: 1;
     margin: 70px auto;
-    max-width: 1000px;
+    width: 1000px;
     font-family: 'Merriweather', serif;
   }
 }
