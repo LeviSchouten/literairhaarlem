@@ -6,8 +6,6 @@ import './event-card.styles.scss';
 const EventCard = ({ props }) => {
   const history = useHistory();
 
-  console.log(props);
-
   return (
     <div className="event-card">
       <div className="section">

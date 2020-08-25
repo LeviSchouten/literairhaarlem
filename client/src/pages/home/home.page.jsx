@@ -16,7 +16,7 @@ const Home = () => {
           tien wordt.
         </p>
         <img
-          src={'./images/pexels-elevate-1267321.jpg'}
+          src={process.env.PUBLIC_URL + '/images/pexels-elevate-1267321.jpg'}
           alt="literair haarlem evenement"
           className="dinner-image"
         />
@@ -24,7 +24,7 @@ const Home = () => {
       <hr />
       <div className="section">
         <img
-          src={'./images/pexels-cottonbro-4738075.jpg'}
+          src={process.env.PUBLIC_URL + '/images/pexels-cottonbro-4738075.jpg'}
           alt="haarlemse muren"
           className="walls-image"
         />
