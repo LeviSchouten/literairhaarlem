@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import axios from 'axios';
+
+import './muur.styles.scss';
+
+const Muur = () => {
+  const [wall, setWall] = useState();
+
+  const location = useLocation().pathname;
+  const id = location.substr(location.lastIndexOf('/') + 1);
+
+  useEffect(() => {
+    axios.get('/api/walls/' + id).then((res) => setWall(res.data));
+  }, []);
+
+  if (!wall) {
+    return <div className="text">Oeps er is iets misgegaan.</div>;
+  }
+
+  return (
+    <div className="muur">
+      <div className="text">
+        <div className="title">{wall.titel}</div>
+        <div className="location">{wall.locatie}</div>
+        <div className="paragraph">{wall.gedicht}</div>
+        <div className="author">{wall.auteur}</div>
+      </div>
+      <div
+        className="image"
+        style={{ backgroundImage: `url(${wall.imageUrl})` }}
+      ></div>
+    </div>
+  );
+};
+
+export default Muur;

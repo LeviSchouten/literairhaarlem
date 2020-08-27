@@ -10,10 +10,14 @@ const port = process.env.PORT || 5000;
 const app = express();
 
 const events = require('./routes/api/events');
+const walls = require('./routes/api/walls');
+const contact = require('./routes/api/contact');
 
 app.use(bodyParser.json());
 
 app.use('/api/events', events);
+app.use('/api/walls', walls);
+app.use('/api/contact', contact);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
