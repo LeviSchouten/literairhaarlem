@@ -13,6 +13,7 @@ import Evenement from './pages/evenement/evenement.page.jsx';
 import Informatie from './pages/informatie/informatie.page.jsx';
 import Muren from './pages/muren/muren.page.jsx';
 import Muur from './pages/muur/muur.page.jsx';
+import Insturen from './pages/insturen/insturen.page.jsx';
 
 function App() {
   return (
@@ -31,9 +32,7 @@ function App() {
               component={Informatie}
             />
             <Route exact path="/haarlemsemuren/muren" component={Muren} />
-            <Route exact path="/haarlemsemuren/insturen">
-              insturen
-            </Route>
+            <Route exact path="/haarlemsemuren/insturen" component={Insturen} />
             <Route exact path="/haarlemsemuren/muren/:id" component={Muur} />
           </Switch>
         </div>
