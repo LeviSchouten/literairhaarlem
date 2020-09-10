@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import './insturen.styles.scss';
 
@@ -7,7 +8,41 @@ const Insturen = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [content, setContent] = useState('');
-  const [image, setImage] = useState();
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [file, setFile] = useState('');
+
+  const handleSubmit = () => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('content', content);
+    formData.append('subject', subject);
+    formData.append('email', email);
+    formData.append('name', name);
+
+    axios
+      .post('/api/contact/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+      .then(console.log);
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+
+    const reader = new FileReader();
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    reader.onloadend = () => {
+      setFile(file);
+      setPreviewUrl(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
 
   return (
     <div className="insturen">
@@ -90,17 +125,15 @@ const Insturen = () => {
             </div>
             <div className="wrapper">
               <div className="upload-label">Toevoegen</div>
-              <input
-                type="file"
-                className="upload"
-                onChange={(e) => setImage(e.target.files[0])}
-              />
-              <div className="image">preview image</div>
+              <input type="file" className="upload" onChange={handleChange} />
             </div>
           </label>
-          <button onClick={() => console.log(name, email, content, image)}>
-            Versturen
-          </button>
+          <img src={previewUrl} alt="" srcset="" className="imagePreview" />
+          <div className="button-wrapper">
+            <button className="submit" onClick={handleSubmit}>
+              Versturen
+            </button>
+          </div>
         </div>
       </div>
     </div>

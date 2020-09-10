@@ -1,8 +1,21 @@
 const express = require('express');
-const router = express.Router();
+const multer = require('multer');
 const nodemailer = require('nodemailer');
+// const cloudinary = require('cloudinary');
 
-router.post('/', (req, res) => {
+const upload = multer();
+const router = express.Router();
+
+// cloudinary.config({
+//   cloud_name: process.env.CLOUD_NAME,
+//   api_key: process.env.CLOUD_API_KEY,
+//   api_secret: process.env.CLOUD_API_SECRET,
+// });
+
+router.post('/', upload.single('file'), (req, res) => {
+  const form = JSON.parse(JSON.stringify(req.body));
+  console.log(req.file);
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -25,6 +38,13 @@ router.post('/', (req, res) => {
     subject: req.body.name,
     text: req.body.message,
     replyTo: req.body.email,
+    attachments: [
+      {
+        filename: 'foto_' + form.name + '.png',
+        content: req.file.buffer,
+        contentType: 'image/png',
+      },
+    ],
   };
 
   transporter.sendMail(mailOptions, (err, response) => {

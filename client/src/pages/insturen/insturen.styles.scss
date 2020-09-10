@@ -51,6 +51,17 @@
         cursor: pointer;
       }
 
+      .imagePreview {
+        max-width: 100px;
+      }
+
+      .button-wrapper {
+        .submit {
+          float: right;
+          font-size: 20px;
+        }
+      }
+
       label {
         display: flex;
         flex-direction: column;
