@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import Header from './components/header/header.component.jsx';
 import Footer from './components/footer/footer.component.jsx';
+import NavbarComponent from './components/navbar/navbar.component.jsx';
 
 import Home from './pages/home/home.page.jsx';
 import Over from './pages/over/over.page.jsx';
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Header />
+        <NavbarComponent />
         <div className="content">
           <Switch className="linked-content">
             <Route exact path="/" component={Home} />

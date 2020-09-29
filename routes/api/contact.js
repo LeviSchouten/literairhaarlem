@@ -14,6 +14,7 @@ const router = express.Router();
 
 router.post('/', upload.single('file'), (req, res) => {
   const form = JSON.parse(JSON.stringify(req.body));
+  console.log(form);
   console.log(req.file);
 
   const transporter = nodemailer.createTransport({
@@ -27,25 +28,30 @@ router.post('/', upload.single('file'), (req, res) => {
   const defaultResponse = {
     from: process.env.EMAIL_ADDRESS,
     to: req.body.email,
-    subject: 'Literair Haarlem',
+    subject: 'Literair Haarlemherok',
     text: 'bedankt voor u inzending, we komen zo snel mogelijk bij u terug.',
     replyTo: process.env.EMAIL_ADDRESS,
   };
 
+  const message = `Bericht van ${req.body.name},\ninhoud:\n${req.body.content}`;
+
   const mailOptions = {
     from: req.body.email,
     to: process.env.EMAIL_ADDRESS,
-    subject: req.body.name,
-    text: req.body.message,
+    subject: req.body.subject,
+    text: message,
     replyTo: req.body.email,
-    attachments: [
+  };
+
+  if (req.file) {
+    mailOptions.attachments = [
       {
         filename: 'foto_' + form.name + '.png',
         content: req.file.buffer,
         contentType: 'image/png',
       },
-    ],
-  };
+    ];
+  }
 
   transporter.sendMail(mailOptions, (err, response) => {
     if (err) {
