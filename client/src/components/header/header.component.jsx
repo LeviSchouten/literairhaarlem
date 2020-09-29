@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import ExpandLogo from './icons/expand_more-24px.svg';
 import { Link } from 'react-router-dom';
 
 import './header.styles.scss';
