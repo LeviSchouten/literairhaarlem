@@ -40,3 +40,28 @@
     background-size: cover;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .evenement {
+    display: flex;
+    flex-direction: column;
+
+    .textarea {
+      width: 80vw;
+      border: none;
+      padding: 0;
+
+      .title {
+        font-size: 30px;
+      }
+
+      .content-long {
+        font-size: 16px;
+      }
+    }
+
+    .image {
+      width: 80vw;
+    }
+  }
+}

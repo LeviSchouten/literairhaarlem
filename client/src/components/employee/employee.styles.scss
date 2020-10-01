@@ -34,3 +34,29 @@
     font-size: 20px;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .employee {
+    .image {
+      width: 100px;
+      height: 100px;
+    }
+
+    .employee-header {
+      .employee-title {
+        .employee-name {
+          font-size: 25px;
+        }
+
+        .employee-position {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .employee-content {
+      max-width: 85vw;
+      font-size: 19px;
+    }
+  }
+}
