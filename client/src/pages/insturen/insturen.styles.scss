@@ -99,7 +99,6 @@
         .upload-label {
           font-family: 'Roboto', sans-serif;
           font-size: 20px;
-          width: 108px;
           background-color: #c4c4c4;
           padding: 20px 25px;
           border-radius: 5px;
@@ -115,6 +114,29 @@
           padding: 13px 8px;
           font-family: 'Merriweather', serif;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .insturen {
+    .title {
+      font-size: 35px;
+    }
+
+    .section {
+      flex-direction: column;
+
+      .text {
+        width: 80vw;
+      }
+    }
+
+    .contact {
+      .form {
+        width: 80vw;
+        max-width: 650px;
       }
     }
   }

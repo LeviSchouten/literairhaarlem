@@ -13,7 +13,7 @@ import './App.scss';
 import Evenement from './pages/evenement/evenement.page.jsx';
 import Informatie from './pages/informatie/informatie.page.jsx';
 import Gedichten from './pages/gedichten/gedichten.page.jsx';
-import Muur from './pages/muur/muur.page.jsx';
+import Gedicht from './pages/gedicht/gedicht.page.jsx';
 import Insturen from './pages/insturen/insturen.page.jsx';
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
             <Route
               exact
               path="/haarlemsemuren/gedichten/:id"
-              component={Muur}
+              component={Gedicht}
             />
           </Switch>
         </div>

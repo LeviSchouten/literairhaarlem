@@ -1,4 +1,4 @@
-.muur {
+.gedicht {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,7 +20,6 @@
 
     .paragraph {
       padding-top: 30px;
-
       font-size: 20px;
     }
 
@@ -37,5 +36,29 @@
     width: 320px;
     height: 400px;
     background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .gedicht {
+    flex-direction: column;
+
+    .text {
+      border: none;
+      width: 80vw;
+
+      .title {
+        font-size: 30px;
+      }
+
+      .location {
+        padding-top: 0;
+      }
+
+      .paragraph {
+        padding-top: 10px;
+        font-size: 19px;
+      }
+    }
   }
 }

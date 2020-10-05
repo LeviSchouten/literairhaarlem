@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import axios from 'axios';
 
-import './muur.styles.scss';
+import './gedicht.styles.scss';
 
-const Muur = () => {
+const Gedicht = () => {
   const [wall, setWall] = useState();
 
   const location = useLocation().pathname;
@@ -20,7 +20,7 @@ const Muur = () => {
   }
 
   return (
-    <div className="muur">
+    <div className="gedicht">
       <div className="text">
         <div className="title">{wall.titel}</div>
         <div className="location">{wall.locatie}</div>
@@ -35,4 +35,4 @@ const Muur = () => {
   );
 };
 
-export default Muur;
+export default Gedicht;
