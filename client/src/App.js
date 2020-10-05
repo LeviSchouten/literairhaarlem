@@ -12,7 +12,7 @@ import Agenda from './pages/agenda/agenda.page.jsx';
 import './App.scss';
 import Evenement from './pages/evenement/evenement.page.jsx';
 import Informatie from './pages/informatie/informatie.page.jsx';
-import Muren from './pages/muren/muren.page.jsx';
+import Gedichten from './pages/gedichten/gedichten.page.jsx';
 import Muur from './pages/muur/muur.page.jsx';
 import Insturen from './pages/insturen/insturen.page.jsx';
 
@@ -32,9 +32,17 @@ function App() {
               path="/haarlemsemuren/informatie"
               component={Informatie}
             />
-            <Route exact path="/haarlemsemuren/muren" component={Muren} />
+            <Route
+              exact
+              path="/haarlemsemuren/gedichten"
+              component={Gedichten}
+            />
             <Route exact path="/haarlemsemuren/insturen" component={Insturen} />
-            <Route exact path="/haarlemsemuren/muren/:id" component={Muur} />
+            <Route
+              exact
+              path="/haarlemsemuren/gedichten/:id"
+              component={Muur}
+            />
           </Switch>
         </div>
         <Footer />

@@ -52,8 +52,8 @@ const NavbarComponent = () => {
               <DropdownItem tag={Link} to="/haarlemsemuren/informatie">
                 <span className="item">Informatie</span>
               </DropdownItem>
-              <DropdownItem tag={Link} to="/haarlemsemuren/muren">
-                <span className="item">Muren</span>
+              <DropdownItem tag={Link} to="/haarlemsemuren/gedichten">
+                <span className="item">Gedichten</span>
               </DropdownItem>
               <DropdownItem tag={Link} to="/haarlemsemuren/insturen">
                 <span className="item">Insturen</span>

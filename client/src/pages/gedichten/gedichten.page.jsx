@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
 
-import './muren.styles.scss';
+import './gedichten.styles.scss';
 
-const Muren = () => {
+const Gedichten = () => {
   const [walls, setWalls] = useState();
 
   const history = useHistory();
@@ -15,9 +15,9 @@ const Muren = () => {
   }, []);
 
   return (
-    <div className="muren">
+    <div className="gedichten">
       <div className="section">
-        <div className="title">Muren</div>
+        <div className="title">Gedichten</div>
         <div className="paragraph">
           Hier een lijst met alle muren waar we al gedichten op gezet hebben.
           Klik op een foto voor meer informatie.
@@ -31,7 +31,7 @@ const Muren = () => {
                   className="image"
                   style={{ backgroundImage: `url(${wall.imageUrl})` }}
                   onClick={() =>
-                    history.push('/haarlemsemuren/muren/' + wall._id)
+                    history.push('/haarlemsemuren/gedichten/' + wall._id)
                   }
                 ></div>
               );
@@ -42,4 +42,4 @@ const Muren = () => {
   );
 };
 
-export default Muren;
+export default Gedichten;
