@@ -33,9 +33,9 @@ const Informatie = () => {
       <hr />
       <div className="section">
         <img
-          src={process.env.PUBLIC_URL + '/images/pexels-cottonbro-4738075.jpg'}
+          src={process.env.PUBLIC_URL + '/images/janstraat.jpg'}
           alt="haarlemse muren"
-          className="walls-image"
+          className="walls-image-last"
         />
         <div className="text">
           <div className="title">Hoe werken we?</div>

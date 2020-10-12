@@ -1,10 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 // import dinner from './images/pexels-elevate-1267321.jpg';
 
 import './home.styles.scss';
 
 const Home = () => {
+  const history = useHistory();
+
   return (
     <div className="home">
       <div className="section">
@@ -35,7 +38,9 @@ const Home = () => {
             in Haarlem Teksten zetten van Haarlemse schrijvers. Heeft u nog
             suggesties voor muren, of teksten laat het ons weten!
           </p>
-          <button>Lees meer</button>
+          <button onClick={() => history.push('/haarlemsemuren/informatie')}>
+            Lees meer
+          </button>
         </div>
       </div>
       <hr />
