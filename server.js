@@ -11,6 +11,7 @@ const app = express();
 
 const events = require('./routes/api/events');
 const walls = require('./routes/api/walls');
+const emptyWalls = require('./routes/api/emptyWalls');
 const contact = require('./routes/api/contact');
 
 app.use(bodyParser.json());
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.use('/api/events', events);
 app.use('/api/walls', walls);
 app.use('/api/contact', contact);
+app.use('/api/emptywalls', emptyWalls);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

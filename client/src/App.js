@@ -15,6 +15,8 @@ import Informatie from './pages/informatie/informatie.page.jsx';
 import Gedichten from './pages/gedichten/gedichten.page.jsx';
 import Gedicht from './pages/gedicht/gedicht.page.jsx';
 import Insturen from './pages/insturen/insturen.page.jsx';
+import Muren from './pages/muren/muren.page.jsx';
+import Muur from './pages/muur/muur.page.jsx';
 
 function App() {
   return (
@@ -37,12 +39,14 @@ function App() {
               path="/haarlemsemuren/gedichten"
               component={Gedichten}
             />
+            <Route exact path="/haarlemsemuren/muren" component={Muren} />
             <Route exact path="/haarlemsemuren/insturen" component={Insturen} />
             <Route
               exact
               path="/haarlemsemuren/gedichten/:id"
               component={Gedicht}
             />
+            <Route exact path="/haarlemsemuren/muren/:id" component={Muur} />
           </Switch>
         </div>
         <Footer />
