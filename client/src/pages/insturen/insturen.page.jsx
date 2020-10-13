@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Alert } from 'reactstrap';
 
 import './insturen.styles.scss';
 
@@ -10,6 +11,7 @@ const Insturen = () => {
   const [content, setContent] = useState('');
   const [previewUrl, setPreviewUrl] = useState(null);
   const [file, setFile] = useState('');
+  const [status, setStatus] = useState('');
 
   const handleSubmit = () => {
     const formData = new FormData();
@@ -25,7 +27,14 @@ const Insturen = () => {
           'Content-Type': 'multipart/form-data',
         },
       })
-      .then(console.log);
+      .then((res) => {
+        if (res.data === 'success') {
+          setStatus(res.data);
+        } else {
+          setStatus('failed');
+        }
+      })
+      .catch(() => setStatus('failed'));
   };
 
   const handleChange = (e) => {
@@ -42,6 +51,31 @@ const Insturen = () => {
     };
 
     reader.readAsDataURL(file);
+  };
+
+  const statusHeader = () => {
+    console.log(status);
+    if (status === 'success') {
+      return (
+        <Alert color="success">
+          Email is verstuurd, we komen zo snel mogelijk bij u terug!
+        </Alert>
+      );
+    }
+    if (status === 'failed') {
+      console.log('here');
+      return (
+        <Alert color="danger">
+          Er is iets misgegaan met het versturen van u e-mail, check of alle
+          vlakken met een asterisk zijn ingevuld en probeer het opnieuw. Of neem
+          direct contact met ons op via literairhaarlemdev@gmail.com. Excuses
+          voor het ongemak.
+        </Alert>
+      );
+    }
+    if (!status) {
+      return;
+    }
   };
 
   return (
@@ -83,11 +117,11 @@ const Insturen = () => {
         <div className="title">Contact</div>
         <div className="paragraph">
           U kan uw suggesties voor muren en gedichten insturen via dit contact
-          formulier.
+          formulier. Alle vlakken met een asterisk zijn verplicht.
         </div>
         <div className="form">
           <label>
-            <div className="label">Naam:</div>
+            <div className="label">Naam:*</div>
             <input
               type="text"
               value={name}
@@ -95,7 +129,7 @@ const Insturen = () => {
             />
           </label>
           <label>
-            <div className="label">E-mail adres:</div>
+            <div className="label">E-mail adres:*</div>
             <input
               type="text"
               value={email}
@@ -103,7 +137,7 @@ const Insturen = () => {
             />
           </label>
           <label>
-            <div className="label">Onderwerp:</div>
+            <div className="label">Onderwerp:*</div>
             <input
               type="text"
               value={subject}
@@ -111,7 +145,7 @@ const Insturen = () => {
             />
           </label>
           <label>
-            <div className="label">Inhoud:</div>
+            <div className="label">Inhoud:*</div>
             <textarea
               type="textarea"
               value={content}
@@ -134,6 +168,7 @@ const Insturen = () => {
               Versturen
             </button>
           </div>
+          <div style={{ marginTop: '30px' }}>{statusHeader()}</div>
         </div>
       </div>
     </div>

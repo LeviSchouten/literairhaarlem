@@ -15,7 +15,7 @@ const Footer = () => {
         <li>Home</li>
         <li>Over</li>
         <li>Agenda</li>
-        <li>JohnDoe@example.nl</li>
+        <li>literairhaarlemdev@gmail.com</li>
       </ul>
     </div>
   );

@@ -19,8 +19,8 @@ const Gedichten = () => {
       <div className="section">
         <div className="title">Gedichten</div>
         <div className="paragraph">
-          Hier een lijst met alle muren waar we al gedichten op gezet hebben.
-          Klik op een foto voor meer informatie.
+          Hier een lijst met alle muren waar we al gedichten of teksten op gezet
+          hebben. Klik op een foto voor meer informatie.
         </div>
       </div>
       <div className="gallery">

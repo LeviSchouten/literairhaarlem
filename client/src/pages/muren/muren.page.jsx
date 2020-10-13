@@ -20,8 +20,8 @@ const Muren = () => {
       <div className="section">
         <div className="title">Muren</div>
         <div className="paragraph">
-          Hier een lijst met muren waar we nog graag gedichten op willen
-          plaatsten. Klik op een foto voor meer informatie.
+          Hier een lijst met muren waar we nog graag gedichten of teksten op
+          willen plaatsten. Klik op een foto voor meer informatie.
         </div>
       </div>
       <div className="gallery">

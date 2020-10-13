@@ -47,7 +47,15 @@ const Home = () => {
       <div className="socials">
         <div className="title-centered">Blijf op de hoogte.</div>
         <div className="social-buttons">
-          <button className="facebook-button">volg ons op Facebook</button>
+          <button
+            className="facebook-button"
+            onClick={() =>
+              (window.location.href =
+                'https://nl-nl.facebook.com/literair.haarlem/')
+            }
+          >
+            volg ons op Facebook
+          </button>
           <button className="newsletter-button">
             Abonneer op onze nieuwsbrief
           </button>
